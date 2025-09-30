@@ -1,0 +1,4 @@
+# Helm chart values
+global:
+  leaderElection:
+    namespace: cert-manager
