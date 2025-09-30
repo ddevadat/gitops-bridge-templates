@@ -58,7 +58,7 @@ spec:
                 service:
                   type: {{default "ClusterIP" .metadata.annotations.ingress_nginx_service_type}}
       destination:
-        namespace: '{{values.addonChartRepositoryNamespace}}'
+        namespace: '{{.values.addonChartRepositoryNamespace}}'
         name: '{{.name}}'
       syncPolicy:
         automated:
