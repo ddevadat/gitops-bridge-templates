@@ -140,11 +140,6 @@ configs:
 
           return health_status
 
-      "v1/Service":
-        ignoreDifferences: |
-          jqPathExpressions:
-            - .status.loadBalancer.ingress[].ipMode
-
       "*.aws.crossplane.io/*":
         health.lua: |
           health_status = {
