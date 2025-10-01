@@ -45,15 +45,15 @@ spec:
             ignoreMissingValueFiles: true
             valueFiles:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/default/addons/{{values.addonChart}}/values.yaml
-            values: |
-              rook-ceph: 
-                monitoring:
-                  enabled: false 
-              rook-ceph-cluster: 
-                toolbox:
-                  enabled: true
-                monitoring:
-                  enabled: false 
+            # values: |
+            #   rook-ceph: 
+            #     monitoring:
+            #       enabled: false 
+            #   rook-ceph-cluster: 
+            #     toolbox:
+            #       enabled: true
+            #     monitoring:
+            #       enabled: false 
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
