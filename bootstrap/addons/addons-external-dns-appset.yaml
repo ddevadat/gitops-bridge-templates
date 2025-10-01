@@ -58,7 +58,7 @@ spec:
                 - --oci-zones-cache-duration=60s
                 - --oci-auth-instance-principal
                 - --exclude-target-net=10.0.0.0/8 
-                - --oci-compartment-ocid={{ .metadata.annotations.oci_zone_compartment_id  }}
+                - --oci-compartment-ocid="{{ .metadata.annotations.oci_zone_compartment_id  }}"
           # fileParameters:
           #  - name:
           #    path:
