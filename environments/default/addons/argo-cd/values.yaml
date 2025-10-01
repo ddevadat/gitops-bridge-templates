@@ -140,6 +140,11 @@ configs:
 
           return health_status
 
+      "v1/Service":
+        ignoreDifferences: |
+          jsonPointers:
+            - /status/loadBalancer/ingress
+
       "*.aws.crossplane.io/*":
         health.lua: |
           health_status = {
