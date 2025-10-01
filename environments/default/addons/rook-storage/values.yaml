@@ -8,9 +8,9 @@ rook-ceph-cluster:
   monitoring:
     enabled: false 
   cephClusterSpec:
-    # Set this only during uninstall
-    cleanupPolicy:  
-      confirmation: "yes-really-destroy-data"
+    # # Set this only during uninstall
+    # cleanupPolicy:  
+    #   confirmation: "yes-really-destroy-data"
     dataDirHostPath: /var/lib/rook
     mon:
       # Set the number of mons to be started. Generally recommended to be 3.

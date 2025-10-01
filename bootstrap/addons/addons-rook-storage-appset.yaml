@@ -5,7 +5,7 @@ metadata:
   name: addons-rook-storage
 spec:
   syncPolicy:
-    preserveResourcesOnDeletion: false
+    preserveResourcesOnDeletion: true
   generators:
     - merge:
         mergeKeys: [server]
