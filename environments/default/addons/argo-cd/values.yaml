@@ -142,8 +142,8 @@ configs:
 
       "v1/Service":
         ignoreDifferences: |
-          jsonPointers:
-            - /status/loadBalancer/ingress
+          jqPathExpressions:
+            - .status.loadBalancer.ingress[].ipMode
 
       "*.aws.crossplane.io/*":
         health.lua: |
