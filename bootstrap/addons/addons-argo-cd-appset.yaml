@@ -54,7 +54,7 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
               global:
-                domain: argocd-circles.{{metadata.annotations.domain}}
+                domain: argocd-circles.{{ default "example.com" (index .metadata.annotations "domain") }}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
