@@ -52,6 +52,9 @@ spec:
             valueFiles:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/default/addons/{{values.addonChart}}/values.yaml
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
+            values: |
+              global:
+                domain: {{metadata.annotations.domain}}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
