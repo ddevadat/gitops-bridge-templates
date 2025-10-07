@@ -36,7 +36,7 @@ applicationSet:
 
 server:
   ingress:
-    enabled: false
+    enabled: true
     ingressClassName: "nginx"
     tls: true
     annotations:
