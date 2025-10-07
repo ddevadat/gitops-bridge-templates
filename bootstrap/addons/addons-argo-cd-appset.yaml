@@ -54,7 +54,8 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
               global:
-                domain: argocd.mydomain.com
+                domain: '{{ if and (hasKey metadata.annotations "domain") (ne (index metadata.annotations "domain") "") }}argocd.{{ metadata.annotations.domain }}{{ else }}argocd.mydomain.com{{ end }}'
+
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
