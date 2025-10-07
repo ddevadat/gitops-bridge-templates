@@ -54,12 +54,6 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
               installCRDs: true
-          # fileParameters:
-          #  - name:
-          #    path:
-          # parameters
-          # values
-          # valuesObject
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
