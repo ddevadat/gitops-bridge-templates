@@ -72,10 +72,3 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
-          # - ServerSideApply=true  # Big CRDs.
-      # ignoreDifferences:
-      #   - group: ""
-      #     kind: PersistentVolumeClaim
-      #     jsonPointers:
-      #       - /metadata
-      #       - /status
