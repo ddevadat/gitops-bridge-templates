@@ -1,0 +1,15 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  pathType: Prefix
+  annotations: 
+    cert-manager.io/cluster-issuer: 'self-signed-issuer'
+
+secret:
+  name: pmm-secret
+  create: true
+service:
+  type: ClusterIP
+storage:
+  storageClassName: "oci-bv"
+  size: 50Gi
