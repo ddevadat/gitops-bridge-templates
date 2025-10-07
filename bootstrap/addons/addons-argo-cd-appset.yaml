@@ -55,6 +55,9 @@ spec:
             values: |
               global:
                 domain: argocd-demo.{{metadata.annotations.domain}}
+              configs:
+                secret:
+                  argocdServerAdminPassword: {{metadata.annotations.argocd_admin_password}}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
