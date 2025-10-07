@@ -3,7 +3,7 @@ sources:
   - service
   - ingress
 provider: oci
-txtOwnerId: app-external-dns
+txtOwnerId: demo-external-dns
 registry: txt
 interval: 2m
 policy: upsert-only
