@@ -73,3 +73,10 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true  # Big CRDs.
+      ignoreDifferences:
+        - group: ""
+          kind: PersistentVolumeClaim
+          name: pmm-storage
+          namespace: '{{values.addonChartRepositoryNamespace}}'
+          jsonPointers:
+            - /metadata/creationTimestamp
