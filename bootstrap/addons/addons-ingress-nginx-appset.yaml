@@ -59,9 +59,9 @@ spec:
                   type: {{default "ClusterIP" .metadata.annotations.ingress_nginx_service_type}}
                   annotations: 
                     oci.oraclecloud.com/load-balancer-type: "nlb"
-                    oci-network-load-balancer.oraclecloud.com/internal: "false"
-                    oci-network-load-balancer.oraclecloud.com/subnet: "{{ .metadata.annotations.oci_pubic_lb_subnet_id  }}"
-                    oci-network-load-balancer.oraclecloud.com/oci-network-security-groups: "{{ .metadata.annotations.oci_public_lb_nsg_id  }}"
+                    oci-network-load-balancer.oraclecloud.com/internal: "{{ .metadata.annotations.is_lb_internal  }}"
+                    oci-network-load-balancer.oraclecloud.com/subnet: "{{ .metadata.annotations.oci_lb_subnet_id  }}"
+                    oci-network-load-balancer.oraclecloud.com/oci-network-security-groups: "{{ .metadata.annotations.oci_lb_nsg_id  }}"
       destination:
         namespace: '{{.values.addonChartRepositoryNamespace}}'
         name: '{{.name}}'
