@@ -57,6 +57,7 @@ spec:
                 - --oci-zone-scope=GLOBAL
                 - --oci-zones-cache-duration=60s
                 - --oci-auth-instance-principal
+                - --domain-filter={{ metadata.annotations.domain  }}
                 - --exclude-target-net=10.0.0.0/8 
                 - --oci-compartment-ocid={{ metadata.annotations.oci_zone_compartment_id  }}
           # fileParameters:
