@@ -58,7 +58,7 @@ spec:
                 - --oci-zones-cache-duration=60s
                 - --oci-auth-instance-principal
                 - --domain-filter=oci.internal
-                - --include-target-net=10.0.0.0/8 
+                - --target-net-filter=10.0.0.0/8 
                 - --oci-compartment-ocid={{ metadata.annotations.oci_zone_compartment_id  }}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
