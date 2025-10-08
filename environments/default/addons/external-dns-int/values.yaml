@@ -1,0 +1,10 @@
+# Helm chart values
+nameOverride: external-dns-int
+sources:
+  - service
+  - ingress
+provider: oci
+txtOwnerId: demo-external-dns-int
+registry: txt
+interval: 2m
+policy: upsert-only
