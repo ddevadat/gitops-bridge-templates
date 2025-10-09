@@ -61,3 +61,13 @@ server:
   service:
     type: ClusterIP
 
+configs:
+  cm:
+    application.resourceTrackingMethod: 'annotation' #use annotation for tracking required for Crossplane
+    resource.exclusions: |
+      - apiGroups:
+          - cilium.io
+        kinds:
+          - CiliumIdentity
+        clusters:
+          - "*"
