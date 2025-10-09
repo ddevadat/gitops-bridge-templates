@@ -1,0 +1,16 @@
+# Helm values
+
+hubble:
+  tls:
+    enabled: false
+  relay: 
+    enabled: true
+  ui:
+    enabled: true
+ipam:
+  # -- Configure IP Address Management mode.
+  # ref: https://docs.cilium.io/en/stable/network/concepts/ipam/
+  mode: "kubernetes"
+clustermesh:
+  # -- Deploy clustermesh-apiserver for clustermesh
+  useAPIServer: true
