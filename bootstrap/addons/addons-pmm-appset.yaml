@@ -14,7 +14,7 @@ spec:
               values:
                 addonChart: pmm
                 # anything not staging or prod use this version
-                addonChartVersion: 1.4.11
+                addonChartVersion: 1.4.12
                 addonChartRepositoryNamespace: monitoring
                 addonChartRepository: https://percona.github.io/percona-helm-charts
               selector:
@@ -27,13 +27,13 @@ spec:
                 matchLabels:
                   environment: dev
               values:
-                addonChartVersion: 1.4.11
+                addonChartVersion: 1.4.12
           - clusters:
               selector:
                 matchLabels:
                   environment: prod
               values:
-                addonChartVersion: 1.4.11
+                addonChartVersion: 1.4.12
   template:
     metadata:
       name: '{{values.addonChart}}'
