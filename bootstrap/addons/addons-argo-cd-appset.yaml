@@ -54,7 +54,7 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
               global:
-                domain: argocd-demo.{{metadata.annotations.domain}}
+                domain: argocd-test.{{metadata.annotations.domain}}
               configs:
                 secret:
                   argocdServerAdminPassword: {{metadata.annotations.argocd_admin_password}}

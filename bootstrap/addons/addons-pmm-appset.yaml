@@ -56,15 +56,15 @@ spec:
               ingress:
                 annotations: 
                   cert-manager.io/cluster-issuer: "{{ metadata.annotations.certificate_issuer }}"
-                hostname: pmm-demo.{{ metadata.annotations.domain }}
+                hostname: pmm-test.{{ metadata.annotations.domain }}
                 hosts:
-                  - host: pmm-demo.{{ metadata.annotations.domain }}
+                  - host: pmm-test.{{ metadata.annotations.domain }}
                     paths: 
                     - "/"
                 tls:
                   - secretName: pmm-server-tls
                     hosts: 
-                    - pmm-demo.{{ metadata.annotations.domain }}
+                    - pmm-test.{{ metadata.annotations.domain }}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
