@@ -1,14 +1,6 @@
 image:
   repository: docker.io/percona/pmm-server
 
-service:
-  ## @param service.name Service name that is dns name monitoring services would send data to. `monitoring-service` used by default by pmm-client in Percona operators.
-  ##
-  name: monitoring-service
-  ## @param service.type Kubernetes Service type
-  ##
-  type: NodePort
-  
 ingress:
   enabled: false
   ingressClassName: nginx
@@ -20,7 +12,18 @@ secret:
   name: pmm-secret
   create: true
 service:
-  type: ClusterIP
+  type: NodePort
+  ports:
+    - port: 443
+      targetPort: https
+      protocol: TCP
+      name: https
+      nodePort: 32443
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+      nodePort: 32080
 storage:
   storageClassName: "oci-bv"
   size: 50Gi
