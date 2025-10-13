@@ -60,12 +60,6 @@ spec:
                 - --domain-filter={{ metadata.annotations.domain  }}
                 - --exclude-target-net=10.0.0.0/8 
                 - --oci-compartment-ocid={{ metadata.annotations.oci_zone_compartment_id  }}
-          # fileParameters:
-          #  - name:
-          #    path:
-          # parameters
-          # values
-          # valuesObject
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'

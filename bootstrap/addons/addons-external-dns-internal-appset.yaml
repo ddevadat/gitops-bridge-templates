@@ -57,7 +57,7 @@ spec:
                 - --oci-zone-scope=PRIVATE
                 - --oci-zones-cache-duration=60s
                 - --oci-auth-instance-principal
-                - --domain-filter={{ metadata.annotations.int_domain  }}
+                - --domain-filter={{ metadata.annotations.domain  }}
                 - --target-net-filter=10.0.0.0/8 
                 - --oci-compartment-ocid={{ metadata.annotations.oci_zone_compartment_id  }}
       destination:
