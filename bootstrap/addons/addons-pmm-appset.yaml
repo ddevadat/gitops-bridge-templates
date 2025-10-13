@@ -54,15 +54,15 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
               ingress:
-                hostname: pmm-demo.{{ metadata.annotations.domain }}
+                hostname: pmm-demo.{{ metadata.annotations.int_domain }}
                 hosts:
-                  - host: pmm-demo.{{ metadata.annotations.domain }}
+                  - host: pmm-demo.{{ metadata.annotations.int_domain }}
                     paths: 
                     - "/"
                 tls:
                   - secretName: pmm-server-tls
                     hosts: 
-                    - pmm-demo.{{ metadata.annotations.domain }}
+                    - pmm-demo.{{ metadata.annotations.int_domain }}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
