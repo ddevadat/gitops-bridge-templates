@@ -2,7 +2,6 @@ image:
   repository: docker.io/percona/pmm-server
 
 ingress:
-  enabled: true
   ingressClassName: nginx
   pathType: Prefix
 

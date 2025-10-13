@@ -54,6 +54,7 @@ spec:
               - $values/{{metadata.annotations.addons_repo_basepath}}environments/{{metadata.labels.environment}}/addons/{{values.addonChart}}/values.yaml
             values: |
               ingress:
+                enabled: {{metadata.annotations.create_ingress}}
                 annotations: 
                   cert-manager.io/cluster-issuer: "{{ metadata.annotations.certificate_issuer }}"
                 hostname: pmm-test.{{ metadata.annotations.domain }}

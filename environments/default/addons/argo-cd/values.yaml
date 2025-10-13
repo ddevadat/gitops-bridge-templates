@@ -36,13 +36,8 @@ applicationSet:
 
 server:
   ingress:
-    enabled: true
     ingressClassName: "nginx"
     tls: true
-    annotations:
-      cert-manager.io/cluster-issuer: 'self-signed-issuer'
-      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
   autoscaling:
     enabled: true
     minReplicas: 1
