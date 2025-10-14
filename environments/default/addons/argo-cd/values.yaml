@@ -66,3 +66,22 @@ configs:
           - CiliumIdentity
         clusters:
           - "*"
+extraObjects:
+  - |
+    apiVersion: argoproj.io/v1alpha1
+    kind: AppProject
+    metadata:
+      name: default
+      namespace: {{ $.Release.Namespace | quote }}
+      annotations:
+        source: gitops-bridge
+    spec:
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+      sourceRepos:
+        - '*'
+      destinations:
+        - namespace: '*'
+          name: '*'
+          server: '*'
