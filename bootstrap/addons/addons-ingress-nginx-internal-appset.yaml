@@ -16,7 +16,7 @@ spec:
                 addonChart: ingress-nginx
                 # anything not staging or prod use this version
                 addonChartVersion: 4.10.0
-                addonChartRepositoryNamespace: ingress-nginx
+                addonChartRepositoryNamespace: ingress-nginx-int
                 addonChartRepository: https://kubernetes.github.io/ingress-nginx
               selector:
                 matchExpressions:
