@@ -62,9 +62,6 @@ spec:
                     cert-manager.io/cluster-issuer: "{{ metadata.annotations.certificate_issuer }}"
                     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
                     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-              configs:
-                secret:
-                  argocdServerAdminPassword: {{metadata.annotations.argocd_admin_password}}
       destination:
         namespace: '{{values.addonChartRepositoryNamespace}}'
         name: '{{name}}'
